@@ -1,8 +1,6 @@
-[![Build Status](https://travis-ci.org/dahfool/react-boilerplate.svg?branch=master)](https://travis-ci.org/dahfool/react-boilerplate)
+# React Carousel
 
-# React boilerplate
-React es6 boilerplate, using es6 versions of gulp and webpack config. Please make sure you have latest versions of node,
-
+A React carousel with basic functionalities.
 ### Installation
 
 If you do not have [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) installed globally run
@@ -12,6 +10,9 @@ If you do not have [gulp](https://github.com/gulpjs/gulp/blob/master/docs/gettin
 Then    
 
     npm install
+
+Open /public/index.html to view the carousel
+
 
 ### Useful links
 
