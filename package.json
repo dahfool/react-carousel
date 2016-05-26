@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dahfool/react-boilerplate.git"
+    "url": "https://github.com/dahfool/react-carousel"
   },
   "keywords": [
     "es6",
@@ -22,7 +22,7 @@
   "author": "dahfool",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dahfool/react-boilerplate/issues"
+    "url": "https://github.com/dahfool/react-carousel/issues"
   },
   "dependencies": {
     "babel-core": "~6.8.0",
@@ -39,5 +39,5 @@
     "webpack": "~1.13.0",
     "webpack-stream": "^3.2.0"
   },
-  "homepage": "https://github.com/dahfool/react-boilerplate"
+  "homepage": "https://github.com/dahfool/react-carousel"
 }
