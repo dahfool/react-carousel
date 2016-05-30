@@ -3,7 +3,7 @@ import sass from 'gulp-sass';
 import watch from 'gulp-watch';
 import webpack from 'webpack-stream';
 import webpackConfig from './webpack.config.babel';
-import projectPath from './projectpath.babel'
+import projectPath from './projectpath.babel';
 
 /**
  * webpack - react es6 compilation
