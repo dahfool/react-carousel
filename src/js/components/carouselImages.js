@@ -6,17 +6,19 @@ class CarouselImages extends React.Component {
     render () {
         let that = this;
         return (
-            <div>
+            <ul>
                 {this.props.images.map(function (result) {
                     return (
-                        <Image
-                            key={result.id}
-                            data={result}
-                            status={that.props.status}
-                        />
+                        <li key={result.id}>
+                            <Image
+                                data={result}
+                                status={that.props.status}
+                                >
+                            </Image>
+                        </li>
                     )
                 })}
-            </div>
+            </ul>
         );
     }
 

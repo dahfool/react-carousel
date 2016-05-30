@@ -17,7 +17,6 @@ class Carousel extends React.Component {
 
 
     _nextImage (item) {
-
         if((item === "right") && (this.state.active !== Data.images.length) ) {
             this.setState({active: this.state.active + 1});
         } else if((this.state.active !== 1) && (item === "left")) {
@@ -39,7 +38,7 @@ class Carousel extends React.Component {
         return (
             <div>
                 <CarouselImages images={Data.images} status={this.state.active} show={this._showImage}/>
-                <Thumbnails images={Data.thumbnails} show={this._showImage} />
+                <Thumbnails images={Data.thumbnails} show={this._showImage} active={this.state.active} display={this.props.thumbnail} />
                 <Caption text={this._getCurrentCaption (this.state.active)} display={this.props.caption} />
                 <Button direction="left" setStatus={this._nextImage}/>
                 <Button direction="right" setStatus={this._nextImage}/>

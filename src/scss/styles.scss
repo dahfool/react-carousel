@@ -1,4 +1,4 @@
-/* SASS goes in here */
+@import "meyer-reset";
 
 .hide {
   display: none;
@@ -6,4 +6,15 @@
 
 .show {
   display: block;
+}
+
+.active {
+  border: 1px solid #000;
+}
+
+li {
+  display: inline-block;
+  img {
+    margin-right: 10px;
+  }
 }

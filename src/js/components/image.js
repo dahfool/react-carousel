@@ -9,7 +9,8 @@ class Image extends React.Component {
 
         imgClass = classNames({
             'hide': true,
-            'show': this.props.status === this.props.data.id
+            'show': this.props.status === this.props.data.id,
+            'active': this.props.active === this.props.data.id
         });
 
         if(typeof this.props.click === "function") {

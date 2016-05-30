@@ -58,7 +58,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _reactDom.render)(_react2.default.createElement(_carousel2.default, { caption: true }), document.getElementById('carousel'));
+	(0, _reactDom.render)(_react2.default.createElement(_carousel2.default, { caption: true, thumbnail: true }), document.getElementById('carousel'));
 
 /***/ },
 /* 1 */
@@ -20213,7 +20213,6 @@
 	    _createClass(Carousel, [{
 	        key: '_nextImage',
 	        value: function _nextImage(item) {
-
 	            if (item === "right" && this.state.active !== _data2.default.images.length) {
 	                this.setState({ active: this.state.active + 1 });
 	            } else if (this.state.active !== 1 && item === "left") {
@@ -20238,7 +20237,7 @@
 	                'div',
 	                null,
 	                _react2.default.createElement(_carouselImages2.default, { images: _data2.default.images, status: this.state.active, show: this._showImage }),
-	                _react2.default.createElement(_thumbnail2.default, { images: _data2.default.thumbnails, show: this._showImage }),
+	                _react2.default.createElement(_thumbnail2.default, { images: _data2.default.thumbnails, show: this._showImage, active: this.state.active, display: this.props.thumbnail }),
 	                _react2.default.createElement(_caption2.default, { text: this._getCurrentCaption(this.state.active), display: this.props.caption }),
 	                _react2.default.createElement(_button2.default, { direction: 'left', setStatus: this._nextImage }),
 	                _react2.default.createElement(_button2.default, { direction: 'right', setStatus: this._nextImage })
@@ -20293,14 +20292,17 @@
 	        value: function render() {
 	            var that = this;
 	            return _react2.default.createElement(
-	                'div',
+	                'ul',
 	                null,
 	                this.props.images.map(function (result) {
-	                    return _react2.default.createElement(_image2.default, {
-	                        key: result.id,
-	                        data: result,
-	                        status: that.props.status
-	                    });
+	                    return _react2.default.createElement(
+	                        'li',
+	                        { key: result.id },
+	                        _react2.default.createElement(_image2.default, {
+	                            data: result,
+	                            status: that.props.status
+	                        })
+	                    );
 	                })
 	            );
 	        }
@@ -20357,7 +20359,8 @@
 
 	            imgClass = (0, _classnames2.default)({
 	                'hide': true,
-	                'show': this.props.status === this.props.data.id
+	                'show': this.props.status === this.props.data.id,
+	                'active': this.props.active === this.props.data.id
 	            });
 
 	            if (typeof this.props.click === "function") {
@@ -20590,16 +20593,24 @@
 	        key: 'render',
 	        value: function render() {
 	            var that = this;
+
+	            if (!this.props.display) {
+	                return false;
+	            }
 	            return _react2.default.createElement(
-	                'div',
+	                'ul',
 	                null,
 	                this.props.images.map(function (result) {
-	                    return _react2.default.createElement(_image2.default, {
-	                        key: result.id,
-	                        data: result,
-	                        status: result.id,
-	                        click: that.props.show
-	                    });
+	                    return _react2.default.createElement(
+	                        'li',
+	                        { key: result.id },
+	                        _react2.default.createElement(_image2.default, {
+	                            data: result,
+	                            status: result.id,
+	                            click: that.props.show,
+	                            active: that.props.active
+	                        })
+	                    );
 	                })
 	            );
 	        }
